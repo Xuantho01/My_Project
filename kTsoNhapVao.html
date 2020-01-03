@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nhập vào</title>
+</head>
+<body>
+<script>
+  let value = parseInt(prompt("Nhập vào một số: ",));
+  switch ((value > 0) ? 1 : (value < 0) ? -1 : 0){
+      case 1:
+          alert(1);
+          break;
+      case -1:
+           alert(-1);
+           break;
+      default:
+          alert(0);
+  }
+</script>
+</body>
+</html>
