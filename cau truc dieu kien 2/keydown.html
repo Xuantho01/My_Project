@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>conditional statement 2</title>
+</head>
+<body onload="docReady()">
+    <img id="myImage" src="images/nobita.png" style="position:absolute;left:0; top:0;" height = "100" width = "80"/>
+<script>
+    let Nobita = document.getElementById("myImage");
+    function upArrowPressed(){
+        var Nobita = document.getElementById("myImage");
+        Nobita.style.top = parseInt(Nobita.style.top) - 5 + 'px';
+    }
+    function downArrowPressed(){
+        var Nobita = document.getElementById("myImage");
+        Nobita.style.top = parseInt(Nobita.style.top) + 5 + 'px';
+    }
+    function leftArrowPressed(){
+        var Nobita = document.getElementById("myImage");
+        Nobita.style.left = parseInt(Nobita.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed(){
+        var Nobita = document.getElementById("myImage");
+        Nobita.style.left = parseInt(Nobita.style.left) + 5 + 'px';
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+          case 37:
+              leftArrowPressed();
+              break;
+          case 39:
+              rightArrowPressed();
+              break;
+          case 38:
+              upArrowPressed();
+              break;
+          case 40:
+              downArrowPressed();
+              break;
+        }
+    }
+    function docReady(){
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
