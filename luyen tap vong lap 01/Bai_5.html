@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+</head>
+<body>
+<h2>Tổng 20 số đầu tiên trong dãy Fibonacci</h2>
+<script>
+
+    let a = new Array();
+    a[0] = 1;
+    a[1] = 1;
+    for(i =2 ; i < 20; i++) {
+        a[i] = a[i - 1] + a[i - 2];
+    }
+    let total = 0;
+    for(i = 0; i < 20; i++){
+
+        total = a[i] + total;
+        console.log(total);
+    }
+    document.write(total);
+</script>
+</body>
+</html>
