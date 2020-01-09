@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<h3>Giải phương trình bậc 2</h3>
+<script>
+    var a = parseFloat(prompt("Nhập vào cạnh a: "));
+    var b = parseFloat(prompt("Nhập vào cạnh a: "));
+    var c = parseFloat(prompt("Nhập vào cạnh a: "));
+    var x1, x2;
+    var delta = Math.pow(b,2) - (4*a*c);
+    if( delta < 0){
+        alert("Phương trình vô nghiệm");
+    }
+    if(delta = 0){
+      x1 = x2 = -b/(2*a);
+      alert("nghiệm của phương trình là x1 = x2 = "+ x1);
+    }
+    else{
+        x1 = (-b + Math.sqrt(delta))/(2*a);
+        x2 = (-b - Math.sqrt(delta))/(2*a);
+        alert("Nghiệm của phương trình là x1 = "+ x1 + '\n' + "x2 = "+ x2);
+    }
+
+</script>
+</body>
+</html>
