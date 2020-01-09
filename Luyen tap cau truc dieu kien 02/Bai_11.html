@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<h3>Tính giá điện</h3>
+<script>
+    var salary = parseFloat(prompt("Nhập vào thu nhập cá nhân: "));
+    var tax;
+    tax = parseFloat(tax);
+    if(salary > 0) {
+        tax = salary * 5 / 100;
+        if (salary > 5000000) {
+            tax = (salary * 10 / 100) - 250000;
+            if (salary > 10000000) {
+                tax = (salary * 15 / 100) - 750000;
+                if (salary > 18000000) {
+                    tax = (salary * 20 / 100) - 1650000;
+                    if (salary > 32000000) {
+                        tax = (salary * 25 / 100) - 3250000;
+                        if (salary > 52000000) {
+                            tax = (salary * 30 / 100) - 5850000;
+                            if (salary > 80000000) {
+                                tax = (salary * 35 / 100) - 9850000;
+                                console.log(salary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    document.write("Tổng tiền thuế phải đóng là: " + tax);
+</script>
+</body>
+</html>
