@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra câu trả lời</title>
+</head>
+<body>
+<script>
+    let userName = prompt("Who's there?", '');
+    if(userName == "Admin"){
+       alert("Welcome!");
+    }
+    else if(userName == null){
+        alert("Canceled")
+    }
+    else{
+        alert("I don't Know you!");
+    }
+    let pass = prompt("Enter passWord: ",'');
+    if(pass == "admin"){
+        alert("Welcome!");
+    }
+    else if(pass == null){
+        alert("Canceled")
+    }
+    else{
+        alert("Wrong password");
+    }
+</script>
+</body>
+</html>

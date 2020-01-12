@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Finonaci</title>
+</head>
+<body>
+<h3>Dãy Finonacci</h3>
+<script>
+    var a = new Array();
+    a[0] = 1;
+    a[1] = 1;
+    for( i = 2; i < 100; i++){
+        a[i] = a[i -1] + a[i -2];
+    }
+    for( i = 0; i < 100 ; i++){
+        document.write(a[i] + '  ');
+    }
+
+</script>
+</body>
+</html>

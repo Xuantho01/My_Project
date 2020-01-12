@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cạnh của tam giác</title>
+</head>
+<body>
+    <h3>Kiểm tra cạnh của tam giác</h3>
+<script>
+    var a = parseFloat(prompt("Nhập vào cạnh a: "));
+    var b = parseFloat(prompt("Nhập vào cạnh b: "));
+    var c = parseFloat(prompt("Nhập vào cạnh c: "));
+    if(a > 0 && b > 0 && c > 0){
+        if(a + b > c || a + c > b || c + b > a){
+            alert("Số cạnh nhập vào là cạnh của một tam giác1");
+        }else{
+            alert("Cạnh nhập vào không phải là cạnh của tam giác");
+        }
+    }
+    else{
+        alert("Cạnh nhập vào không phải là cạnh của tam giác");
+    }
+</script>
+</body>
+</html>

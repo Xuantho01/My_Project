@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>simple calculator</title>
+    <style>
+        button{
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: cornflowerblue;
+            background-color: chocolate;
+        }
+        #screen{
+            height: 30px;
+            border: grey 1px solid;
+            font-size: 20px;
+
+        }
+        #btn_0{
+            width: 100%;
+        }
+        button:hover{
+            background-color: darkslategray;
+        }
+        #khung{
+            margin: 100px;
+            margin-right: 1000px;
+            border: black 2px solid;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let screen; // Lưu giá trị của màn hình
+    let buffer;  // luu số hạng thứ nhất
+    let operator; // lưu thuật toán
+    function getScreenByFloat(){
+        let screen = document.getElementById('screen').innerText;
+        screen = Number.parseFloat(screen);
+        return screen;
+    }
+    function calculator(value){
+        switch (value) {
+            case 'DOT':
+                value = ".";
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                screen = document.getElementById('screen').innerText;
+                document.getElementById('screen').innerText = screen + value;
+                break;
+            case 'AC':
+                document.getElementById('screen').innerHTML = '&nbsp;';
+                break;
+            case 'NEG':
+                screen = getScreenByFloat();
+                screen = - screen;
+                document.getElementById('screen').innerText = screen;
+                break;
+            case 'PER':
+                screen = getScreenByFloat();
+                screen /= 100;
+                document.getElementById('screen').innerText = screen;
+                break;
+            case 'DIV':
+                operator = '/';
+                buffer = getScreenByFloat();
+                document.getElementById('screen').innerHTML = '&nbsp;';
+                break;
+            case 'MUL':
+                operator = '*';
+                buffer = getScreenByFloat();
+                document.getElementById('screen').innerHTML = '&nbsp;';
+                break;
+            case 'SUB':
+                operator = '-';
+                buffer = getScreenByFloat();
+                document.getElementById('screen').innerHTML = '&nbsp;';
+                break;
+            case 'ADD':
+                operator = '+';
+                buffer = getScreenByFloat();
+                document.getElementById('screen').innerHTML = '&nbsp;';
+                break;
+
+            case 'EQUAL':
+                screen = getScreenByFloat();
+                let x;
+                let expression = "x = " +  buffer + operator + screen;
+                eval(expression);
+                document.getElementById('screen').innerHTML = x;
+                buffer = "";
+                operator= "";
+                break
+        }
+    }
+</script>
+<div id = "khung">
+    <table border="0" width ="50">
+        <tr>
+            <td colspan="4" align="right"> <div id="screen"></div></td>
+
+        </tr>
+        <tr>
+            <td><button id = "btn_ac" class = "" onclick="calculator('AC')">AC</button></td>
+            <td><button id = "btn_neg" class = "" onclick="calculator('NEG')">+/-</button></td>
+            <td><button id = "btn_per" class = "" onclick="calculator('PER')">%</button></td>
+            <td><button id = "btn_div" class = "" onclick="calculator('DIV')">/</button></td>
+        </tr>
+        <tr>
+            <td><button id = "btn_7" class = "" onclick="calculator('7')">7</button></td>
+            <td><button id = "btn_8" class = "" onclick="calculator('8')">8</button></td>
+            <td><button id = "btn_9" class = "" onclick="calculator('9')">9</button></td>
+            <td><button id = "btn_x" class = "" onclick="calculator('MUL')">X</button></td>
+        </tr>
+        <tr>
+            <td><button id = "btn_4" class = "" onclick="calculator('4')">4</button></td>
+            <td><button id = "btn_5" class = "" onclick="calculator('5')">5</button></td>
+            <td><button id = "btn_6" class = "" onclick="calculator('6')">6</button></td>
+            <td><button id = "btn_" class = "" onclick="calculator('SUB')">-</button></td>
+        </tr>
+        <tr>
+            <td><button id = "btn_1" class = "" onclick="calculator('1')">1</button></td>
+            <td><button id = "btn_2" class = "" onclick="calculator('2')">2</button></td>
+            <td><button id = "btn_3" class = "" onclick="calculator('3')">3</button></td>
+            <td><button id = "btn_add" class = "" onclick="calculator('ADD')">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id = "btn_0" class = "" onclick="calculator('0')">0</button></td>
+            <td><button id = "btn_dot" class = "" onclick="calculator('DOT')">.</button></td>
+            <td><button id = "btn_equal" class = "" onclick="calculator('EQUAL')">=</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

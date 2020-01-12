@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<h3>Kiểm tra nhập vào</h3>
+<script>
+    var n;
+    do{
+        n = prompt("Nhập vào số tuổi: ");
+        if(!isNaN(n)){
+            break;
+        }
+        else{
+            alert("Bạn cần nhập vào số! vui lòng thử lại!");
+        }
+    }while(isNaN(n));
+    function KtTuoi(){
+        if(n > 0 && n < 100){
+            alert("Nhập tuổi đúng!");
+        }
+        else{
+            alert("Nhập tuổi sai");
+        }
+    }
+    KtTuoi();
+</script>
+</body>
+</html>
