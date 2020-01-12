@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h3>CHUYỂN ĐỔI TIỀN TỆ</h3>
+    <style>
+        #convert:hover{
+            background-color: #666666;
+        }
+    </style>
+</head>
+<body>
+<form action="chuyentien.html" method="get" >
+    <table border="1px solid">
+        <tr >
+            <th width="200px">Amount</th>
+            <th width="150px">Form Currency</th>
+            <th width="100px">To Currency</th>
+
+        </tr>
+        <tr>
+            <td align="center"><input type="text" id="value"></td>
+            <td align="center">
+                <select name="Country1" id="select1" >
+                    <option value="vietnam" >Việt Nam</option>
+                    <option value="usd" >USD</option>
+                </select></td>
+            <td>
+                <select name="money" id="select2">
+                    <option value="usd" >USD</option>
+                    <option value="vietnam" >Viet Nam</option>
+                </select></td>
+        </tr>
+    </table><br>
+</form>
+<input type="button" id="convert" onclick="conVert()" value="Convert">
+<p id="result"></p>
+<script>
+    function conVert() {
+        let value = document.getElementById('value').value;
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+        let usd = value/23000;
+        let vietnam = value*23000;
+        if(select1 == "vietnam" && select2 == "usd"){
+            document.getElementById('result').innerHTML ="Result: " + usd+ " USD";
+        }
+        else if(select1 == "usd" && select2 == "vietnam"){
+            document.getElementById('result').innerHTML ="Result: " + vietnam+ " VNĐ";
+        }
+    }
+</script>
+</body>
+</html>
